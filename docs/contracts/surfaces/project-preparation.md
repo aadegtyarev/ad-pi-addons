@@ -11,7 +11,7 @@ The `prepare-project` Pi skill prepares a new or existing project repository for
 - Missing catalog packages are installed at personal scope with their pinned source. Already configured package identities are left at their current versions; no upgrades occur.
 - The personal Telegram extension symlink is created only if `~/.pi/agent/extensions/pi-ad-telegram` is absent.
 - The project receives `docs/contracts/features/`, `docs/contracts/surfaces/`, and a copy of the meta-contract only if no project copy exists.
-- `AGENTS.md` is created from the template and tailored to verified project conventions if absent. For an existing file, bootstrap adds the managed workflow block only when no such block exists; complete or partial existing blocks are preserved. The generated block allows direct work when subagent roles or skills are unavailable and requires a concise final user-facing report for every task, including changes, checks, and unresolved risks or blockers. These instructions are self-contained and do not depend on Pi skills.
+- `AGENTS.md` is created from the template and tailored to verified project conventions if absent. For an existing file, bootstrap adds the managed workflow block only when no such block exists; complete or partial existing blocks are preserved. The generated block allows direct work when subagent roles or skills are unavailable and requires a concise final user-facing report for every task, including changes, checks, and unresolved risks or blockers. It also requires updating durable surface contracts, marking a feature contract complete for final verification, then deleting that temporary file. These instructions are self-contained and do not depend on Pi skills.
 - The skill reports packages present/installed, files changed, checks run, and conflicts.
 
 ## Failure behavior and recovery
@@ -32,4 +32,3 @@ If an existing meta-contract differs, preserve it and ask before replacement/mer
 ## Related contracts
 
 - [Pi add-on distribution](pi-addon-distribution.md)
-- [Bootstrap feature](../features/ad-pi-addons-bootstrap.md)

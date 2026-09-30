@@ -31,12 +31,15 @@ test("project bootstrap creates contract paths, meta-contract, and template AGEN
     readFile(join(root, "AGENTS.md"), "utf8"),
   ]);
   assert.match(meta, /What a contract describes/);
+  assert.match(meta, /mark the feature contract complete for final verification, then delete the temporary feature-contract file/);
   assert.equal((await stat(join(root, "docs/contracts/features"))).isDirectory(), true);
   assert.equal((await stat(join(root, "docs/contracts/surfaces"))).isDirectory(), true);
   assert.match(agents, /BEGIN ad-pi-addons contract workflow/);
   assert.match(agents, /Project-specific commands and conventions/);
   assert.match(agents, /Use available subagent roles only when configured/);
   assert.match(agents, /If roles or skills are unavailable, work directly/);
+  assert.match(agents, /mark the feature contract complete for final verification, then delete the temporary feature-contract file/);
+  assert.match(agents, /Feature contracts are temporary task artifacts and must not remain after verified completion/);
   assert.match(agents, /End every task with a concise user-facing report/);
   assert.match(agents, /this rule requires no installed skills/);
   assert.doesNotMatch(agents, /pi-subagents|prepare-project skill/i);

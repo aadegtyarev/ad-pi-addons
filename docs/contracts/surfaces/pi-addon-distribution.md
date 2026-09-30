@@ -34,4 +34,3 @@ The repository contains no bot tokens or API credentials. The bundled Telegram e
 ## Related contracts
 
 - [Project preparation](project-preparation.md)
-- [Bootstrap feature](../features/ad-pi-addons-bootstrap.md)
