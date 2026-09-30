@@ -10,9 +10,9 @@ Prerequisites: Pi, Git, and access to the private GitHub repository (SSH authent
 pi install git:github.com/aadegtyarev/ad-pi-addons
 ```
 
-The Pi package manifest intentionally installs **only** the `prepare-project` skill. The Telegram extension is bundled under `plugins/`, outside Pi's conventional extension-discovery path, to avoid loading it twice when an existing user extension symlink points to another copy.
+The Pi package manifest intentionally installs **only** the `prepare-project` skill. The canonical source for the first-party extensions is [`pi-plugins`](https://github.com/aadegtyarev/pi-plugins), installed from the catalog as a personal Pi package.
 
-After installing the package, ask the orchestrator to prepare a project. The skill compares the personal Pi packages with `catalog/addons.json`, installs missing pinned packages, installs the Telegram extension only if it is missing, creates the contract paths, copies the meta-contract, and merges the compact process instructions into the project's `AGENTS.md`.
+After installing this package, ask the orchestrator to prepare a project. The skill compares personal Pi packages with `catalog/addons.json`, installs missing packages without changing existing package versions, creates the contract paths, copies the meta-contract when absent, and merges the compact process instructions into the project's `AGENTS.md`. Before installing `pi-plugins`, it checks the legacy standalone extension paths for `pi-ad-telegram`, `pi-ad-session-usage`, and `pi-ad-hooks`. If any file, directory, or symlink exists at one of those paths, the skill preserves it and asks before installing or migrating; it never changes user-global Pi settings or symlinks.
 
 ### Scaffold a project without Pi skills
 
@@ -22,7 +22,7 @@ With Node.js available and this repository cloned, the contract files and self-c
 node /path/to/ad-pi-addons/scripts/bootstrap-project.mjs /path/to/project
 ```
 
-This scaffolds contract directories, copies the meta-contract only when absent, and safely adds the marked workflow block to `AGENTS.md`. It does not install Pi packages or the Telegram extension; use the preparation skill for the full add-on setup.
+This scaffolds contract directories, copies the meta-contract only when absent, and safely adds the marked workflow block to `AGENTS.md`. It does not install Pi packages; use the preparation skill for the full add-on setup.
 
 Update this package with:
 
@@ -32,8 +32,7 @@ pi update git:github.com/aadegtyarev/ad-pi-addons
 
 ## What's included
 
-- `plugins/pi-ad-telegram/` — the Telegram bridge extension and tests.
-- `catalog/addons.json` — pinned package sources and the personal extension installation target.
+- `catalog/addons.json` — the desired personal Pi package sources, including canonical `pi-plugins`.
 - `docs/contracts/meta-contract.md` — shared rules for feature and surface contracts.
 - `templates/AGENTS.md` — compact project-level agent instructions.
 - `skills/prepare-project/SKILL.md` — reusable workflow for preparing a repository.
@@ -41,28 +40,10 @@ pi update git:github.com/aadegtyarev/ad-pi-addons
 
 The package catalog reflects the user's installed personal add-ons as verified in `catalog/addons.json`. Edit it deliberately as the desired baseline changes. It does not include Pi's built-in capabilities.
 
-## Install the bundled Telegram extension manually
-
-If you already have a `pi-ad-telegram` extension in `~/.pi/agent/extensions/`, keep it; do not create a second copy. Otherwise, from a clone of this repository:
-
-```sh
-ln -s "$(pwd)/plugins/pi-ad-telegram" ~/.pi/agent/extensions/pi-ad-telegram
-```
-
-Configure the bot before use:
-
-```sh
-export PI_TELEGRAM_BOT_TOKEN='token-from-BotFather'
-export PI_TELEGRAM_ALLOWED_USER_IDS='123456789'
-pi --telegram
-```
-
-Or set `PI_TELEGRAM_ENABLED=1`. Only use trusted Telegram user IDs: the bot can run commands with the Pi process's permissions. See [`plugins/pi-ad-telegram/README.md`](plugins/pi-ad-telegram/README.md) for details.
+The `pi-plugins` package provides the first-party Telegram bridge and other extensions. Review its [installation and configuration documentation](https://github.com/aadegtyarev/pi-plugins) before enabling extensions. Only use trusted Telegram user IDs: an extension runs with the Pi process's permissions.
 
 ## Validate
 
 ```sh
-npm install
 npm test
-npm run typecheck
 ```

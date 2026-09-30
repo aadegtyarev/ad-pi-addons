@@ -12,14 +12,7 @@
     { "id": "@harms-haus/pi-cwd", "source": "npm:@harms-haus/pi-cwd@1.0.0", "kind": "pi-package" },
     { "id": "@harms-haus/pi-processes", "source": "npm:@harms-haus/pi-processes@0.1.0", "kind": "pi-package" },
     { "id": "@harms-haus/pi-worktrees", "source": "npm:@harms-haus/pi-worktrees@1.0.0", "kind": "pi-package" },
-    { "id": "@harms-haus/pi-lens", "source": "npm:@harms-haus/pi-lens@2.1.0", "kind": "pi-package" }
-  ],
-  "extensions": [
-    {
-      "id": "pi-ad-telegram",
-      "source": "plugins/pi-ad-telegram",
-      "install": "symlink into ~/.pi/agent/extensions/pi-ad-telegram",
-      "kind": "personal-extension"
-    }
+    { "id": "@harms-haus/pi-lens", "source": "npm:@harms-haus/pi-lens@2.1.0", "kind": "pi-package" },
+    { "id": "pi-plugins", "source": "git:github.com/aadegtyarev/pi-plugins", "kind": "pi-package" }
   ]
 }
