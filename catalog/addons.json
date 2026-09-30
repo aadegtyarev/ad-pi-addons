@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "description": "Personal Pi add-ons currently installed; package versions are pinned for clean-machine setup.",
+  "verifiedOn": "2026-09-29",
+  "verifiedAgainst": "pi list and installed npm package versions",
+  "packages": [
+    { "id": "pi-web-access", "source": "npm:pi-web-access@0.32.0", "kind": "pi-package" },
+    { "id": "pi-subagents", "source": "npm:pi-subagents@0.32.0", "kind": "pi-package" },
+    { "id": "pi-intercom", "source": "npm:pi-intercom@0.15.0", "kind": "pi-package" },
+    { "id": "pi-prompt-template-model", "source": "npm:pi-prompt-template-model@0.12.3", "kind": "pi-package" },
+    { "id": "@harms-haus/pi-cwd", "source": "npm:@harms-haus/pi-cwd@1.0.0", "kind": "pi-package" },
+    { "id": "@harms-haus/pi-processes", "source": "npm:@harms-haus/pi-processes@0.1.0", "kind": "pi-package" },
+    { "id": "@harms-haus/pi-worktrees", "source": "npm:@harms-haus/pi-worktrees@1.0.0", "kind": "pi-package" },
+    { "id": "@harms-haus/pi-lens", "source": "npm:@harms-haus/pi-lens@2.1.0", "kind": "pi-package" }
+  ],
+  "extensions": [
+    {
+      "id": "pi-ad-telegram",
+      "source": "plugins/pi-ad-telegram",
+      "install": "symlink into ~/.pi/agent/extensions/pi-ad-telegram",
+      "kind": "personal-extension"
+    }
+  ]
+}

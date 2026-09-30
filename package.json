@@ -1,0 +1,26 @@
+{
+  "name": "ad-pi-addons",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Personal Pi add-ons, contract workflow, and project preparation skill",
+  "license": "MIT",
+  "keywords": ["pi-package"],
+  "pi": {
+    "skills": ["./skills/prepare-project"]
+  },
+  "scripts": {
+    "test": "node --test plugins/pi-ad-telegram/core.test.mts plugins/pi-ad-telegram/outbox.test.mts scripts/bootstrap-project.test.mjs",
+    "typecheck": "tsc --noEmit --target ES2022 --module NodeNext --moduleResolution NodeNext --allowImportingTsExtensions --skipLibCheck plugins/pi-ad-telegram/index.ts plugins/pi-ad-telegram/message-renderer.ts plugins/pi-ad-telegram/outbox.ts plugins/pi-ad-telegram/core.test.mts plugins/pi-ad-telegram/outbox.test.mts plugins/pi-ad-telegram/background-adapters/*.ts"
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-ai": "*",
+    "@earendil-works/pi-coding-agent": "*"
+  },
+  "devDependencies": {
+    "@earendil-works/pi-ai": "0.87.1",
+    "@earendil-works/pi-coding-agent": "0.87.1",
+    "@types/node": "22.19.19",
+    "typescript": "5.9.3"
+  }
+}
