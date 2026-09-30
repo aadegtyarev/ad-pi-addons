@@ -37,12 +37,24 @@ test("project bootstrap creates contract paths, meta-contract, and template AGEN
   assert.match(agents, /BEGIN ad-pi-addons contract workflow/);
   assert.match(agents, /Project-specific commands and conventions/);
   assert.match(agents, /Use available subagent roles only when configured/);
-  assert.match(agents, /If roles or skills are unavailable, work directly/);
+  assert.match(agents, /For nontrivial codebase or documentation reconnaissance, delegate bounded, read-only investigation/);
+  assert.match(agents, /request relevant source paths and concise evidence, not whole-document dumps/);
+  assert.match(agents, /Keep trivial lookups direct/);
+  assert.match(agents, /The parent owns scope, decisions, synthesis, verification, and user communication/);
+  assert.match(agents, /If no suitable role is available, work directly/);
+  assert.match(agents, /state if independent review cannot be obtained/);
+  assert.match(agents, /This rule does not require named Pi skills/);
   assert.match(agents, /mark the feature contract complete for final verification, then delete the temporary feature-contract file/);
   assert.match(agents, /Feature contracts are temporary task artifacts and must not remain after verified completion/);
   assert.match(agents, /End every task with a concise user-facing report/);
   assert.match(agents, /this rule requires no installed skills/);
   assert.doesNotMatch(agents, /pi-subagents|prepare-project skill/i);
+  const managedBlock = (text) => text.slice(
+    text.indexOf("<!-- BEGIN ad-pi-addons contract workflow -->"),
+    text.indexOf("<!-- END ad-pi-addons contract workflow -->") + "<!-- END ad-pi-addons contract workflow -->".length,
+  );
+  const template = await readFile(join(repoRoot, "templates/AGENTS.md"), "utf8");
+  assert.equal(managedBlock(agents), managedBlock(template));
   assert.ok(result.stdout.includes("Project contract paths ready"));
 }));
 
