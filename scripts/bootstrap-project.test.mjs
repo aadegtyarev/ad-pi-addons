@@ -46,7 +46,6 @@ test("project bootstrap creates contract paths, meta-contract, and template AGEN
   assert.match(agents, /This rule does not require named Pi skills/);
   assert.match(agents, /mark the feature contract complete for final verification, then delete the temporary feature-contract file/);
   assert.match(agents, /Feature contracts are temporary task artifacts and must not remain after verified completion/);
-  assert.match(agents, /Respond to the user in Russian by default, including final reports/);
   assert.match(agents, /End every task with a concise user-facing report/);
   assert.match(agents, /this rule requires no installed skills/);
   assert.doesNotMatch(agents, /pi-subagents|prepare-project skill/i);

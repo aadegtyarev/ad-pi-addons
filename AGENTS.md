@@ -1,6 +1,5 @@
 # Repository instructions
 
-- Respond to the user in Russian by default, including final reports. Use another language only when explicitly requested or when producing an artifact requested in that language.
 - Before planning or implementing a feature, read `docs/contracts/meta-contract.md`, agree on the contract, then save the approved feature contract under `docs/contracts/features/`.
 - Identify and read affected `docs/contracts/surfaces/` contracts. Pass exact contract paths to planner, worker/coder, and reviewer; each must read them. If implementing directly, use the same contracts.
 - If scope or a surface changes, pause and get approval. After validation, update affected surface contracts, mark the feature contract complete for final verification, then delete the temporary feature-contract file as directed by the meta-contract.
