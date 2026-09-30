@@ -14,6 +14,16 @@ The Pi package manifest intentionally installs **only** the `prepare-project` sk
 
 After installing the package, ask the orchestrator to prepare a project. The skill compares the personal Pi packages with `catalog/addons.json`, installs missing pinned packages, installs the Telegram extension only if it is missing, creates the contract paths, copies the meta-contract, and merges the compact process instructions into the project's `AGENTS.md`.
 
+### Scaffold a project without Pi skills
+
+With Node.js available and this repository cloned, the contract files and self-contained `AGENTS.md` guidance can be installed without any Pi skills:
+
+```sh
+node /path/to/ad-pi-addons/scripts/bootstrap-project.mjs /path/to/project
+```
+
+This scaffolds contract directories, copies the meta-contract only when absent, and safely adds the marked workflow block to `AGENTS.md`. It does not install Pi packages or the Telegram extension; use the preparation skill for the full add-on setup.
+
 Update this package with:
 
 ```sh

@@ -35,6 +35,11 @@ test("project bootstrap creates contract paths, meta-contract, and template AGEN
   assert.equal((await stat(join(root, "docs/contracts/surfaces"))).isDirectory(), true);
   assert.match(agents, /BEGIN ad-pi-addons contract workflow/);
   assert.match(agents, /Project-specific commands and conventions/);
+  assert.match(agents, /Use available subagent roles only when configured/);
+  assert.match(agents, /If roles or skills are unavailable, work directly/);
+  assert.match(agents, /End every task with a concise user-facing report/);
+  assert.match(agents, /this rule requires no installed skills/);
+  assert.doesNotMatch(agents, /pi-subagents|prepare-project skill/i);
   assert.ok(result.stdout.includes("Project contract paths ready"));
 }));
 

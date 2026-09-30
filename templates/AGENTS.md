@@ -7,6 +7,8 @@
 - Give the exact contract paths to the planner, implementer, and reviewer. If working directly, use the same contracts as the source of truth.
 - If implementation reveals a changed surface or acceptance scope, stop and get approval before proceeding. After verification, update affected surface contracts and mark the feature contract complete.
 - Preserve existing instructions and contracts; never overwrite or delete them silently.
+- Use available subagent roles only when configured. If roles or skills are unavailable, work directly from the same contracts and checks, and state any unavailable independent review.
+- End every task with a concise user-facing report of what changed, checks and outcomes, and remaining risks or blockers. Do not finish with tool output alone or end silently; this rule requires no installed skills.
 <!-- END ad-pi-addons contract workflow -->
 
 ## Project-specific commands and conventions
