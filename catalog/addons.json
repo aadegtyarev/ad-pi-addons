@@ -1,9 +1,10 @@
 {
   "schemaVersion": 1,
-  "description": "Personal Pi add-ons currently installed; package versions are pinned for clean-machine setup.",
+  "description": "Personal Pi add-ons currently installed; npm package versions are pinned for clean-machine setup.",
   "verifiedOn": "2026-09-29",
   "verifiedAgainst": "pi list and installed npm package versions",
   "packages": [
+    { "id": "ad-pi-addons", "source": "git:github.com/aadegtyarev/ad-pi-addons", "kind": "pi-package" },
     { "id": "pi-web-access", "source": "npm:pi-web-access@0.32.0", "kind": "pi-package" },
     { "id": "pi-subagents", "source": "npm:pi-subagents@0.32.0", "kind": "pi-package" },
     { "id": "pi-intercom", "source": "npm:pi-intercom@0.15.0", "kind": "pi-package" },

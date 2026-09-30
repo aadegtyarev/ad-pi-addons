@@ -29,7 +29,7 @@ pi update git:github.com/aadegtyarev/ad-pi-addons
 - `skills/prepare-project/SKILL.md` — reusable workflow for preparing a repository.
 - `scripts/bootstrap-project.mjs` — safe, idempotent scaffolding for contract directories and the marked `AGENTS.md` process block.
 
-The package catalog reflects the user's installed personal add-ons at repository creation time. Edit it deliberately as the desired baseline changes. It does not include Pi's built-in capabilities.
+The package catalog reflects the user's installed personal add-ons as verified in `catalog/addons.json`. Edit it deliberately as the desired baseline changes. It does not include Pi's built-in capabilities.
 
 ## Install the bundled Telegram extension manually
 

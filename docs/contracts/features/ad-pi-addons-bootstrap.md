@@ -1,6 +1,6 @@
 # Feature contract: ad-pi-addons repository bootstrap
 
-- **Status:** implementing
+- **Status:** complete
 - **Approved:** 2026-09-29
 - **Goal:** Create a private, MIT-licensed GitHub repository that distributes the user's Pi add-ons and provides a reusable project-preparation workflow.
 - **Affected surfaces:** [Pi package distribution](../surfaces/pi-addon-distribution.md); [project preparation](../surfaces/project-preparation.md). These contracts are introduced by this feature.
@@ -27,11 +27,11 @@
 - Repository: `github.com/aadegtyarev/ad-pi-addons`, private, MIT.
 - Installable package source: `git:github.com/aadegtyarev/ad-pi-addons`.
 - The package exposes the preparation skill only; the bundled Telegram extension is installed separately as a personal extension symlink if missing.
-- Current package baseline: `pi-web-access@0.32.0`, `pi-subagents@0.32.0`, `pi-intercom@0.15.0`, `pi-prompt-template-model@0.12.3`, `@harms-haus/pi-cwd@1.0.0`, `@harms-haus/pi-processes@0.1.0`, `@harms-haus/pi-worktrees@1.0.0`, `@harms-haus/pi-lens@2.1.0`, plus `pi-ad-telegram`.
+- Current package baseline includes this repository package `git:github.com/aadegtyarev/ad-pi-addons`, plus `pi-web-access@0.32.0`, `pi-subagents@0.32.0`, `pi-intercom@0.15.0`, `pi-prompt-template-model@0.12.3`, `@harms-haus/pi-cwd@1.0.0`, `@harms-haus/pi-processes@0.1.0`, `@harms-haus/pi-worktrees@1.0.0`, `@harms-haus/pi-lens@2.1.0`, plus `pi-ad-telegram`.
 
 ## Acceptance criteria
 
-- The private remote exists and contains the verified initial commit.
+- The private remote exists and contains the verified initial commit; the Pi skill package is installed from that remote in personal settings.
 - The package manifest selects the preparation skill without discovering `plugins/pi-ad-telegram` as an extension.
 - Catalog entries match the installed baseline and Telegram extension source.
 - The skill includes safe, repeatable behavior for missing packages, existing symlinks, existing contracts, and existing `AGENTS.md`.
