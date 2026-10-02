@@ -1,6 +1,6 @@
 ---
 name: repo-docs
-description: Write, rewrite, and review documentation shipped with code: READMEs, references, guides, skills, and contracts. Use when repository docs need clearer narrative, shorter task paths, accurate examples, navigation, or diagrams. Verify claims against source; preserve limitations, security notes, and interfaces.
+description: "Write, rewrite, and review documentation shipped with code: READMEs, references, guides, skills, and contracts. Use when repository docs need clearer narrative, shorter task paths, accurate examples, navigation, or diagrams. Verify claims against source; preserve limitations, security notes, and interfaces."
 ---
 
 # Repository documentation

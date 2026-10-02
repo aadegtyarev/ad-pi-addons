@@ -23,6 +23,7 @@ test("Pi package exposes both skills and bundles the documentation skill resourc
 
   const docsSkill = await readRepoFile("skills/repo-docs/SKILL.md");
   assert.match(docsSkill, /^---\nname: repo-docs\n/m);
+  assert.match(docsSkill, /^description: "[^"]+"$/m);
   assert.match(docsSkill, /references\/page-shapes\.md/);
   assert.match(docsSkill, /references\/diagrams\.md/);
   assert.match(docsSkill, /references\/anti-slop\.md/);
