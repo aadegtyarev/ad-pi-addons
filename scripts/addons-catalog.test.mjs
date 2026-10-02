@@ -35,6 +35,9 @@ test("Pi package exposes both skills and bundles the documentation skill resourc
     "skills/repo-docs/scripts/check_docs.py",
     "skills/repo-docs/LICENSE",
   ]) await readRepoFile(file);
+  const checker = await readRepoFile("skills/repo-docs/scripts/check_docs.py");
+  assert.match(checker, /review repo-docs prose guidance/);
+  assert.doesNotMatch(checker, /references\/anti-slop\.md section 1/);
 });
 
 test("prepare-project guards all legacy duplicate paths", async () => {

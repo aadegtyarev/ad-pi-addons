@@ -17,7 +17,7 @@
 ## Interfaces and compatibility
 
 - Pi package install/update is through Pi's `git:` package source.
-- `pi-plugins` is installed through Pi's `git:` package source and owns its three extension entry points.
+- `pi-plugins` is installed through Pi's `git:` package source and owns its four extension entry points.
 - Existing legacy standalone extension paths are never replaced, removed, or retargeted automatically.
 
 ## Failure behavior and recovery
