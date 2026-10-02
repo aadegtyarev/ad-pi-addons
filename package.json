@@ -3,11 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "Personal Pi add-ons, contract workflow, and project preparation skill",
+  "description": "Personal Pi skills for project preparation and repository documentation",
   "license": "MIT",
   "keywords": ["pi-package"],
   "pi": {
-    "skills": ["./skills/prepare-project"]
+    "skills": ["./skills/prepare-project", "./skills/repo-docs"]
   },
   "scripts": {
     "test": "node --test scripts/addons-catalog.test.mjs scripts/bootstrap-project.test.mjs"
