@@ -40,6 +40,8 @@ test("project bootstrap creates contract paths, meta-contract, and template AGEN
   assert.match(agents, /For nontrivial codebase or documentation reconnaissance, delegate bounded, read-only investigation/);
   assert.match(agents, /request relevant source paths and concise evidence, not whole-document dumps/);
   assert.match(agents, /Keep trivial lookups direct/);
+  assert.match(agents, /## Working principles/);
+  assert.match(agents, /ask the user once/);
   assert.match(agents, /The parent owns scope, decisions, synthesis, verification, and user communication/);
   assert.match(agents, /If no suitable role is available, work directly/);
   assert.match(agents, /state if independent review cannot be obtained/);
